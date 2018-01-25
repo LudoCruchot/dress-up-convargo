@@ -7,15 +7,17 @@
     const div = document.createElement('div');
     const template = actors.map(actor => {
       return `
-        <div class="actor">
-          <span>${actor.who}</span>
-          <span>${actor.type}</span>
-          <span>${actor.amount}</span>
-        </div>
+            <tr>
+              <td>${actor.who}</td> 
+              <td>${actor.type}</td> 
+              <td>${actor.amount} €</td>
+            </tr>
       `;
     }).join('');
 
-    div.innerHTML = template;
+    const head='<thead class="thead-dark"><tr><th scope="col">Who</th><th scope="col">Type</th><th scope="col">Amount</th></tr></thead>';
+
+    div.innerHTML = '<table class="table text-center" id="resultTable">'+ template + '</table>';
     fragment.appendChild(div);
     document.querySelector('#actors').innerHTML = '';
     document.querySelector('#actors').appendChild(fragment);

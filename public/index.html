@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<meta charset="utf-8">
+
     <title>CSS/HTML Workshop with Convargo</title>
+
+    <!-- css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index_style.css">
+	<link rel="icon" type="image/png" href="images/miniature.png" />
+
   </head>
   <body>
-    <div id="trucker">
-      <input class="name" type="text" placeholder="Trucker name"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
-      <input class="price-by-cubic" type="number" placeholder="Price by m3"/>
+
+
+  
+  <header class="container-fluid header">
+  	<div class="container">
+				<h1 class="logo"> CONVARGO </h1>
+	</div>
+  </header>
+
+
+  <div id="ban"></div>
+
+    <section class="container-fluid boxes">
+		<div class="container" id="grid">
+			<div class="row">
+				<hr class="separator">
+				<article class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+					<h2> Trucker </h2>
+					<div id="trucker">
+      					<input class="form-control name" type="text" placeholder="Trucker name"/>
+      					<input class="form-control price-by-km" type="number" placeholder="Price by km"/>
+      					<input class="form-control price-by-cubic" type="number" placeholder="Price by m3"/>
+    				</div>
+				</article>
+				<article class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+					<h2> Shipper </h2>
+					<div id="shipper">
+      					<input class="form-control name" type="text" placeholder="Shipper name"/>
+      					<input class="form-control distance" type="number" placeholder="Distance in km"/>
+      					<input class="form-control volume" type="number" placeholder="Volume in m3"/>
+    				</div>
+    				<div class="custom-control custom-checkbox">
+              			<input type="checkbox" class="custom-control-input option" id="same-address">
+              				<label class="custom-control-label" for="same-address">I chose the deductible option</label>
+           			</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<p><button class="btn btn-primary btn-lg" type="submit" id="compute">Compute</button></p>
+
+    <div class="container">
+    	<div id="actors">
+    		<script src="convargo.js"></script>
+    		<script src="index.js"></script>
+    	</div>
     </div>
-    <div id="shipper">
-      <input class="name" type="text" placeholder="Shipper name"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="volume" type="number" placeholder="Volume in m3"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script src="convargo.js"></script>
-    <script src="index.js"></script>
+    
   </body>
 </html>
